@@ -15,7 +15,7 @@ process GTDBTK_DB_PREPARATION {
     script:
     """
     mkdir database
-    tar -xzf ${database} -C database --strip 1
+    tar -xzf ${database} -C database --strip 1 --no-same-owner
 
     cat <<-END_VERSIONS > versions.yml
     "${task.process}":
