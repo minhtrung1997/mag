@@ -15,7 +15,7 @@ process KRAKEN2_DB_PREPARATION {
     script:
     """
     mkdir db_tmp
-    tar -xf "${db}" -C db_tmp
+    tar -xf "${db}" -C db_tmp --no-same-owner
     mkdir database
     mv `find db_tmp/ -name "*.k2d"` database/
 
