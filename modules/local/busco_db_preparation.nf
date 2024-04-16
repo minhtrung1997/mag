@@ -16,7 +16,7 @@ process BUSCO_DB_PREPARATION {
     script:
     """
     mkdir buscodb
-    tar -xf ${database} -C buscodb
+    tar -xf ${database} -C buscodb --no-same-owner
 
     cat <<-END_VERSIONS > versions.yml
     "${task.process}":
